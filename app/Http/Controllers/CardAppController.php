@@ -8,8 +8,8 @@ use App\User;
 use Role;
 use App\Faculty;
 use App\IDCard;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CardAppController extends Controller
 {
@@ -38,9 +38,14 @@ class CardAppController extends Controller
      */
     public function create()
     {
+
+        $query = DB::table('messages')
+                ->join('users', 'messages.message_to', '=', 'users.id');
+        $messages   = $query->where('message_read_status', '=', 'Unread')->get();
+
         $users   = User::all();
         $faculties= Faculty::all();
-        return view('cardApply', compact('users','faculties'));
+        return view('cardApply', compact('messages', 'users','faculties'));
 
     }
 

@@ -12,16 +12,7 @@
 */
 
 // Route::resource('cards', 'IDCardController');
-Route::post('cards/lostCard', 'CardAppController@lostCard')->name('lostcard');
-Route::resource('cards', 'CardAppController');
 
-Route::resource('course', 'CourseController');
-Route::resource('messages', 'MessagesController');
-
-Route::resource('exams', 'ExamController');
-Route::resource('timetables', 'TimetableController');
-Route::resource('timetabledetails', 'DetailTTController');
-Route::resource('examapplication', 'ExamAppController');
 
 Route::resource('users', 'UserController');
 
@@ -58,6 +49,17 @@ Route::group(['middleware' => 'auth'], function () {
             return view('admin.index');
         }
     ]);
+    Route::post('cards/lostCard', 'CardAppController@lostCard')->name('lostcard');
+    Route::resource('cards', 'CardAppController');
+
+    Route::resource('course', 'CourseController');
+    Route::resource('messages', 'MessagesController');
+
+    Route::resource('exams', 'ExamController');
+    Route::resource('timetables', 'TimetableController');
+    Route::resource('timetabledetails', 'DetailTTController');
+    Route::resource('examapplication', 'ExamAppController');
+    
 });
 
 Route::get('/dashboard', 'HomeController@index')->name('home');

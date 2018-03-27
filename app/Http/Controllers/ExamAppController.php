@@ -7,6 +7,7 @@ use App\User;
 use App\Message;
 use App\ExamApplication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ExamAppController extends Controller
 {

@@ -13,9 +13,7 @@
               <li class="breadcrumb-item active">Add Roles</li>
             </ol>
             <div class="row">
-              <div class="col-12">
-                <h1>Blank</h1>
-                <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p>
+                <div class="col-12">
                     {!! Form::open(['route' => 'role.store', 'method' =>  'POST', 'enctype' => 'multipart/form-data', 'files' => true])!!}
                         @if( isset($header) )
                             <div class="modal-header">
@@ -54,9 +52,9 @@
                                 @endforeach
                             </div>                            
                         </div>
-                        <button class="btn btn-primary" type="submit">Add Product</button>
+                        <button class="btn btn-primary" type="submit">Add Role</button>
                     {!! Form::close() !!}
-              </div>
+                </div>
             </div>
           </div>
 
